@@ -1,0 +1,16 @@
+
+type Service {
+  name: String,
+  category: String,
+  status: String,
+}
+
+type Health @mock {
+
+  status: String,
+  services: [Service]
+}
+
+type Query {
+  getHealthInfo: Health
+}
