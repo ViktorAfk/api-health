@@ -1,9 +1,10 @@
 import { Module } from '@nestjs/common';
-import { ApolloGraphQlModule } from './appolo-graph-ql/apollo-graph-ql.module';
+import { GraphQLRequestModule } from './graphql-request/graphql-request.module';
 import { HealthModule } from './health/health.module';
+import { ApolloModule } from './apollo/apollo.module';
 
 @Module({
-  imports: [HealthModule, ApolloGraphQlModule],
+  imports: [HealthModule, GraphQLRequestModule, ApolloModule],
   controllers: [],
   providers: [],
 })

@@ -7,6 +7,6 @@ export class HealthController {
 
   @Get()
   get() {
-    return this.healthService.getHeathValue();
+    return this.healthService.getApiHeath();
   }
 }
