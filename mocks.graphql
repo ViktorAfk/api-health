@@ -5,12 +5,12 @@ type Service {
   status: String,
 }
 
-type Health @mock {
+ type Health @mock {
 
   status: String,
   services: [Service]
 }
 
 type Query {
-  getHealthInfo: Health
+  apiHealth: Health
 }
