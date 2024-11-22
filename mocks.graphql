@@ -1,0 +1,39 @@
+
+type Metrics {
+  request: Int,
+  latency: Int,
+}
+type DataPoints {
+  time: Date,
+  value: Int,
+}
+
+type Historical {
+  dataPoints: [DataPoints]
+}
+
+type Service {
+  name: String @mockfn(name: "List" values: ["layout", "frontpage", "pages"]),
+  category: String,
+  status: String @mockfn(name: "List" values: ["ok"]),
+  metrics: Metrics
+  historical: Historical,
+}
+
+
+ type Health @mock {
+  status: String @mockfn(name: "List" values: ["ok", "failed"]),
+  version: Int,
+  memory: [Int] @mockfn(name: "NumberRange" values: [100,200]),
+  connections: Int,
+  uptime: Int,
+  services: [Service],
+  releaseId: Int,
+  serviceId: Int,
+  description: String @mockfn(name: "List" values: ["Health of api service"]),
+}
+
+type Query {
+  apiHealth: Health
+}
+
