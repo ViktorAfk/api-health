@@ -20,6 +20,7 @@ export class ApolloService {
         uri: this.appConfigService.MockApiUri,
         headers: {
           Authorization: `apikey ${this.appConfigService.ApiKey}`,
+          'Content-type': 'application/json',
         },
       }),
       cache: new InMemoryCache({ addTypename: false }),
