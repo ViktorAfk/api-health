@@ -6,6 +6,7 @@ const validationObject = z.object({
   MOCK_API_URI: z.string().url(),
   API_KEY: z.string(),
   API_PORT: z.string().min(0).max(65535),
+  WEB_URL: z.string().url(),
 });
 
 @Injectable()
@@ -29,6 +30,10 @@ export class AppConfigService {
   }
 
   get MockApiUri(): string {
+    return this.configService.get('MOCK_API_URI');
+  }
+
+  get webUrl(): string {
     return this.configService.get('MOCK_API_URI');
   }
 }

@@ -15,7 +15,7 @@ type Historical {
 type Service {
   name: String @mockfn(name: "List" values: ["layout", "frontpage", "pages"]),
   category: String,
-  status: String @mockfn(name: "List" values: ["ok", "failed"]),
+  status: String @mockfn(name: "List" values: ["ok"]),
   metrics: Metrics
   historical: Historical,
 }
