@@ -5,7 +5,7 @@ import { z } from 'zod';
 const validationObject = z.object({
   MOCK_API_URI: z.string().url(),
   API_KEY: z.string(),
-  PORT: z.string().min(0).max(65535),
+  API_PORT: z.string().min(0).max(65535),
 });
 
 @Injectable()
@@ -21,7 +21,7 @@ export class AppConfigService {
   ) {}
 
   get port(): number {
-    return Number(this.configService.get('PORT'));
+    return Number(this.configService.get('API_PORT'));
   }
 
   get ApiKey(): string {
